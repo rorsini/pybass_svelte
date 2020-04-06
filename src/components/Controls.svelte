@@ -30,7 +30,6 @@
                 <option value="{note}">{note}</option>
             {/each}
         </select>
-        <span>Selected note: {$note}</span>
     </div>
 
     <div>

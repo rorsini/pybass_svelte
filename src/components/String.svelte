@@ -1,7 +1,6 @@
 <script>
-  export let string = 0;
-  export let thisStringSpacing = 0;
-  export let fbLength = 0;
+  export let string;
+  export let fbLength;
 </script>
 
 <path fill="none" 

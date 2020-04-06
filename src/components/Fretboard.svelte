@@ -52,11 +52,7 @@
     let fretMarkerRadius = 7;
     let fretMarkerColor = '#000';
     let fretMarkerOpacity = '1';
-    let position_color = 'green';
     let length = 1500;
-    let thisStringSpacing = 12.5;
-
-    
 </script>
 
 <svg
@@ -83,7 +79,7 @@
 
     {#each strngs as string, i}
 
-        <String {string} {thisStringSpacing} {fbLength} />
+        <String {string} {fbLength} />
 
     {/each}
   

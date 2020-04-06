@@ -4,9 +4,10 @@
     import { note_list } from "../lib/Utils.js";
     import { note, mode, style, instrument } from '../state/user';
 
-    let scale_degree = 1;
-    let key_index = 0;
-    let notesToRender = [];
+    const bassNote = $note;
+    const bassMode = $mode;
+    const displayStyle = $style; // 'notes', 'chord', 'degrees'
+    const displayInstrument = $instrument;
 
     // TODO: DRY this up
     const hPosOffset = (pos) => {
@@ -33,89 +34,71 @@
         return [frets[coords[1]], strngs[coords[0]]];
     }
 
+    const guitar_notes_matrix = [
+        ['E', 'F', 'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+        ['B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G' ],
+        ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+        ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+        ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+        ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+    ];
 
-    
-    const bassNote = $note;
-    const bassMode = $mode;
-    const displayStyle = $style; // 'notes', 'chord', 'degrees'
-    const displayInstrument = $instrument;
-
-
-
-
-
-
-
-
-  const guitar_notes_matrix = [
-    ['E', 'F', 'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
-    ['B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G' ],
-    ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
-    ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
-    ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
-    ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
-  ];
-
-  let guitar_notes_with_positions = {};
-  for (let i = 0; i < note_list.length; i++) {
-    let positions = [];
-    let this_note_name = note_list[i];
-    for (let pos_string = 0; pos_string <= 5; pos_string++) {
-      let guitar_string = guitar_notes_matrix[pos_string];
-      for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
-        if (guitar_string[pos_fret] === this_note_name) {
-          positions.push([pos_string, pos_fret]);
+    let guitar_notes_with_positions = {};
+    for (let i = 0; i < note_list.length; i++) {
+        let positions = [];
+        let this_note_name = note_list[i];
+        for (let pos_string = 0; pos_string <= 5; pos_string++) {
+            let guitar_string = guitar_notes_matrix[pos_string];
+            for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
+                if (guitar_string[pos_fret] === this_note_name) {
+                    positions.push([pos_string, pos_fret]);
+                }
+            }
         }
-      }
+        guitar_notes_with_positions[this_note_name] = positions;
     }
-    guitar_notes_with_positions[this_note_name] = positions;
-  }
 
-  const bass_notes_matrix = [
-    ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
-    ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
-    ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
-    ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
-  ];
+    const bass_notes_matrix = [
+        ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+        ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+        ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+        ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+    ];
 
-  let bass_notes_with_positions = {};
-  for (let i = 0; i < note_list.length; i++) {
-    let positions = [];
-    let this_note_name = note_list[i];
-    for (let pos_string = 0; pos_string <= 3; pos_string++) {
-      let bass_string = bass_notes_matrix[pos_string];
-      for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
-        if (bass_string[pos_fret] === this_note_name) {
-          positions.push([pos_string, pos_fret]);
+    let bass_notes_with_positions = {};
+    for (let i = 0; i < note_list.length; i++) {
+        let positions = [];
+        let this_note_name = note_list[i];
+        for (let pos_string = 0; pos_string <= 3; pos_string++) {
+            let bass_string = bass_notes_matrix[pos_string];
+            for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
+                if (bass_string[pos_fret] === this_note_name) {
+                    positions.push([pos_string, pos_fret]);
+                }
+            }
         }
-      }
+        bass_notes_with_positions[this_note_name] = positions;
     }
-    bass_notes_with_positions[this_note_name] = positions;
-  }
 
-  let notes = {};
+    let notes = {};
 
-  for (let i = 0; i < note_list.length; i++) {
-    let this_note_name = note_list[i];
-    if (displayInstrument === 'guitar') {
-      notes[this_note_name] = {'coords': guitar_notes_with_positions[this_note_name].map(mapCoords)};
-    } else {
-      notes[this_note_name] = {'coords': bass_notes_with_positions[this_note_name].map(mapCoords)};
+    for (let i = 0; i < note_list.length; i++) {
+        let this_note_name = note_list[i];
+        if (displayInstrument === 'guitar') {
+            notes[this_note_name] = {'coords': guitar_notes_with_positions[this_note_name].map(mapCoords)};
+        } else {
+            notes[this_note_name] = {'coords': bass_notes_with_positions[this_note_name].map(mapCoords)};
+        }
     }
-  }
 
-  // note aliases:
-  notes['Eb'] = notes['D#'];
-  notes['Fb'] = notes['E'];
-  notes['Gb'] = notes['F#'];
-  notes['Ab'] = notes['G#'];
-  notes['Bb'] = notes['A#'];
-  notes['Cb'] = notes['B'];
-  notes['Db'] = notes['C#'];
-
-
-
-
+    // note aliases:
+    notes['Eb'] = notes['D#'];
+    notes['Fb'] = notes['E'];
+    notes['Gb'] = notes['F#'];
+    notes['Ab'] = notes['G#'];
+    notes['Bb'] = notes['A#'];
+    notes['Cb'] = notes['B'];
+    notes['Db'] = notes['C#'];
 
     const note_colors = {
         'C': '#ca0d3c', 'Cb': '#ca0d3c',
@@ -145,7 +128,9 @@
         return s && s.substring(0, 2)
     }) : [];
 
-
+    let scale_degree = 1;
+    let key_index = 0;
+    let notesToRender = [];
     for (let note_index in thisScale) {
         let note = thisScale[note_index];
         let note_coords = notes[note].coords;
@@ -195,9 +180,6 @@
         } 
         scale_degree++;
     }
-
-
-
 
     console.log("thisScale");
     console.log(thisScale);
