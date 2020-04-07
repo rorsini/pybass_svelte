@@ -7,10 +7,17 @@
     export let scale_degree;
     export let stroke_color;
 
-    let stroke_class = 'thinStroke';
-    if (scale_degree === 1) {
-        stroke_class = 'thickStroke';
-    }
+    import { rootNote, mode, style, instrument } from '../state/stores.js';
+
+    let stroke_class =
+        (scale_degree === 1) ?
+            'thickStroke' :
+            'thinStroke';
+
+    let textXPos =
+        (label.length == 1) ?
+            xPos + 6 :
+            xPos + 3;
 </script>
 
 <rect
@@ -25,9 +32,10 @@
     class="{stroke_class}" />
 
 <text
-    x="{xPos + 4}"
+    x="{textXPos}"
     y="{yPos + 3}"
     font-size="10"
+    font-weight="bold"
     fill="{text_color}">{label}</text>
 
 <style>

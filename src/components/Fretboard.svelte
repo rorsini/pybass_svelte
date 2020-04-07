@@ -7,7 +7,7 @@
     import String from "./String.svelte";
     
 
-    import { note, mode, style, instrument } from '../state/user';
+    import { rootNote, mode, style, instrument } from '../state/stores.js';
 
     let fretboard_length = 1070;
 

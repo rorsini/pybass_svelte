@@ -2,11 +2,12 @@
     import gotScales from "got-scales";
     import Note from "./Note.svelte";
     import { note_list } from "../lib/Utils.js";
-    import { note, mode, style, instrument } from '../state/user';
+    import { rootNote, mode, style, instrument } from '../state/stores.js';
 
-    const bassNote = $note;
+    const bassNote = $rootNote;
     const bassMode = $mode;
-    const displayStyle = $style; // 'notes', 'chord', 'degrees'
+    // const displayStyle = $style; // 'notes', 'chord', 'degrees'
+    const displayStyle = 'chord'; // 'notes', 'chord', 'degrees'
     const displayInstrument = $instrument;
 
     // TODO: DRY this up
@@ -163,8 +164,8 @@
                     stroke_color = note_name_root_stroke_color;
                 }
             }
-            let display_note = note_label.replace('A#','Bb');
-            display_note = note_label.replace('D#','Eb');
+            let display_note = String(note_label).replace('A#','Bb');
+            display_note = String(note_label).replace('D#','Eb');
 
             notesToRender.push({
                 xPos: x_coord,
@@ -180,14 +181,10 @@
         } 
         scale_degree++;
     }
-
-    console.log("thisScale");
-    console.log(thisScale);
-
 </script>
 
-{#each notesToRender as note, i}
+{#each notesToRender as noteProps}
 
-    <Note {...note}/>
+    <Note {...noteProps}/>
 
 {/each}

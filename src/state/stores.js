@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-export const note = writable('C');
-export const mode = writable('0,2,4,5,7,9,11');
+export const rootNote = writable('A');
+export const mode = writable('0,1,4,5,7,8,10');
 export const style = writable('notes');
 export const instrument = writable('guitar');
