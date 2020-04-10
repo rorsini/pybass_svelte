@@ -7,8 +7,6 @@
     export let scale_degree;
     export let stroke_color;
 
-    import { rootNote, mode, style, instrument } from '../state/stores.js';
-
     let stroke_class =
         (scale_degree === 1) ?
             'thickStroke' :

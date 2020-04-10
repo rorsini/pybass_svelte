@@ -1,6 +1,9 @@
 <script>
     export let displayInstrument;
-
+    export let displayStyle;
+    export let displayRoot;
+    export let displayMode;
+    
     import Nut from "./Nut.svelte";
     import Note from "./Note.svelte";
     import Notes from "./Notes.svelte";
@@ -8,7 +11,6 @@
     import Fret from "./Fret.svelte";
     import String from "./String.svelte";
     import { frets, strngs, fretDotPositions, instrumentStrings } from "../lib/Utils.js"
-    import { rootNote, mode, style } from '../state/stores.js';
 
     let fbWidth;
     let numberOfStrings;
@@ -76,5 +78,5 @@
         <String {string} {fbLength} />
     {/each}
 
-    <Notes {displayInstrument} />
+    <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
 </svg>

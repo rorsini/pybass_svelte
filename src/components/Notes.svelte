@@ -1,19 +1,14 @@
 <script>
     export let displayInstrument;
-
+    export let displayStyle;
+    export let displayRoot;
+    export let displayMode;
+    
     import gotScales from "got-scales";
     import Note from "./Note.svelte";
     import * as Utils from "../lib/Utils.js";
-    import { rootNote, mode, style } from '../state/stores.js';
-
-    const bassNote = $rootNote;
-    const bassMode = $mode;
-    // const displayStyle = $style; // 'notes', 'chord', 'degrees'
-    const displayStyle = 'chord'; // 'notes', 'chord', 'degrees'
-
 
     let notes = {};
-
     for (let i = 0; i < Utils.noteList.length; i++) {
         let this_note_name = Utils.noteList[i];
         if (displayInstrument === 'guitar') {
@@ -33,7 +28,7 @@
     notes['Db'] = notes['C#'];
 
 
-    const thisScale = bassMode ? gotScales.note(bassNote).scale(bassMode.split(","), true).notes.map(s => {
+    const thisScale = displayMode ? gotScales.note(displayRoot).scale(displayMode.split(","), true).notes.map(s => {
         return s && s.substring(0, 2)
     }) : [];
 
@@ -69,7 +64,7 @@
                 }
             } else {
                 if (scale_degree === 1) {
-                    stroke_color = note_name_root_stroke_color;
+                    stroke_color = Utils.note_name_root_stroke_color;
                 }
             }
             let display_note = String(note_label).replace('A#','Bb');

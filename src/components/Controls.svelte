@@ -4,20 +4,29 @@
     import { rootNote, mode, style, instrument } from '../state/stores.js';
 
     let displayInstrument = $instrument;
+    let displayRoot = $rootNote;
+    let displayStyle = $style;
+    let displayMode = $mode;
 
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
-    const updateRootNote = event => {
-        // $rootNote.set(event.target.value);
-        console.log('rootNote: ', $rootNote);
+    const updateRoot = event => {
+        displayRoot = event.target.value;
+    };
+
+    const updateMode = event => {
+        displayMode = event.target.value;
+    };
+
+    const updateStyle = event => {
+        displayStyle = event.target.value;
     };
 
     const updateInstrument = event => {
         displayInstrument = event.target.value;
-        instrument.set(displayInstrument);
-        console.log('displayInstrument: ', displayInstrument);
     };
+
 
 </script>
 
@@ -26,7 +35,7 @@
 <form on:submit|preventDefault>
     <div>
         <span>Note:</span>
-        <select bind:value={$rootNote} on:change="{updateRootNote}">
+        <select bind:value={displayRoot} on:change="{updateRoot}">
             {#each noteList as note}
                 {#if (note == $rootNote)}
                     <option value="{note}" selected="selected">
@@ -41,7 +50,7 @@
 
     <div>
         <span>Mode:</span>
-        <select>
+        <select bind:value={displayMode} on:change="{updateMode}">
             {#each modesArray as mode}
                 <option value="{modes[mode]}">{mode}</option>
             {/each}
@@ -50,7 +59,7 @@
 
     <div>
         <span>Display style:</span>
-        <select>
+        <select bind:value={displayStyle} on:change="{updateStyle}">
             {#each display_styles as style}
                 <option value="{style}">{style}</option>
             {/each}
@@ -70,7 +79,12 @@
 <!-- <Fretboard displayInstrument={displayInstrument} /> -->
 
 {#if displayInstrument == 'guitar'}
-    <Fretboard displayInstrument='guitar' />
+    <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
 {:else}
-    <Fretboard displayInstrument='bass' />
+    <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
 {/if}
+
+
+<!-- {#if displayInstrument }
+    <Fretboard {displayInstrument} {displayStyle} />
+{/if} -->
