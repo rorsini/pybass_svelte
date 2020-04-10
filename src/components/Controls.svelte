@@ -18,7 +18,13 @@
         <span>Note:</span>
         <select bind:value={$rootNote} on:change="{handleSubmit}">
             {#each note_list as note}
-                <option value="{note}">{note}</option>
+                {#if (note == $rootNote)}
+                    <option value="{note}" selected="selected">
+                        {note}
+                    </option>
+                {:else}
+                    <option value="{note}">{note}</option>
+                {/if}
             {/each}
         </select>
     </div>

@@ -39,11 +39,33 @@ export const getColor = (note, scale) => {
     }
   }
 
+  // TODO: what is this?
   if (note.length > 1) {
     return '#000';
   } else {
     return '#fff';
   }
+};
+
+const hPosOffset = (pos) => {
+  return pos - 24;
+};
+
+const vPosOffset = (pos) => {
+  return pos - 12;
+};
+
+export const frets = [ 30, 114, 194, 269,
+  339, 406, 469, 529,
+  585, 638, 688, 735,
+  780, 822, 862, 899,
+  935, 968, 1000, 1029, 1058 ].map(hPosOffset);
+
+export const strngs = [ 12.5, 37.5, 62.5, 87.5, 112.5, 137.5 ];
+
+export const fretDotPositions = {
+  single: [233.5, 374, 500, 612, 881.5, 952, 1015],
+  double: [758]
 };
 
 export const modes = {
