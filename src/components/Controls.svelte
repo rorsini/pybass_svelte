@@ -6,25 +6,11 @@
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
-    let props;
-    $: props = { 
+    let props = { 
         displayInstrument: $instrument,
         displayRoot: $rootNote,
         displayStyle: $style,
         displayMode: $mode
-    };
-
-    const updateRoot = event => {
-        // $rootNote = event.target.value;
-    };
-    const updateMode = event => {
-        // $mode = event.target.value;
-    };
-    const updateStyle = event => {
-        // $style = event.target.value;
-    };
-    const updateInstrument = event => {
-        // $instrument = event.target.value;
     };
 </script>
 
@@ -33,7 +19,7 @@
 <form on:submit|preventDefault={() => ({})}>
     <div>
         <span>Note:</span>
-        <select bind:value={props.displayRoot} on:change="{updateRoot}">
+        <select bind:value={props.displayRoot}>
             {#each noteList as note}
                 {#if (note == $rootNote)}
                     <option value="{note}" selected="selected">
@@ -48,7 +34,7 @@
 
     <div>
         <span>Mode:</span>
-        <select bind:value={props.displayMode} on:change="{updateMode}">
+        <select bind:value={props.displayMode}>
             {#each modesArray as mode}
                 <option value="{modes[mode]}">{mode}</option>
             {/each}
@@ -57,7 +43,7 @@
 
     <div>
         <span>Display style:</span>
-        <select bind:value={props.displayStyle} on:change="{updateStyle}">
+        <select bind:value={props.displayStyle}>
             {#each display_styles as style}
                 <option value="{style}">{style}</option>
             {/each}
@@ -66,15 +52,13 @@
 
     <div>
         <span>Instrument:</span>
-        <select bind:value={props.displayInstrument} on:change="{updateInstrument}">
+        <select bind:value={props.displayInstrument}>
             {#each intrumentsArray as instrument}
                 <option value="{display_instruments[instrument]}">{instrument}</option>
             {/each}
         </select>
     </div>
 </form>
-
-<!-- <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} /> -->
 
 {#if props.displayInstrument == 'guitar'}
     <Fretboard {...props} />
