@@ -3,14 +3,21 @@
     import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
 
+    let displayInstrument = $instrument;
+
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
-    const handleSubmit = () => {
-        rootNote.update(value => value );
+    const updateRootNote = event => {
+        // $rootNote.set(event.target.value);
+        console.log('rootNote: ', $rootNote);
     };
 
-    let displayInstrument = 'bass';
+    const updateInstrument = event => {
+        displayInstrument = event.target.value;
+        instrument.set(displayInstrument);
+        console.log('displayInstrument: ', displayInstrument);
+    };
 
 </script>
 
@@ -19,7 +26,7 @@
 <form on:submit|preventDefault>
     <div>
         <span>Note:</span>
-        <select bind:value={$rootNote} on:change="{handleSubmit}">
+        <select bind:value={$rootNote} on:change="{updateRootNote}">
             {#each noteList as note}
                 {#if (note == $rootNote)}
                     <option value="{note}" selected="selected">
@@ -52,7 +59,7 @@
 
     <div>
         <span>Instrument:</span>
-        <select>
+        <select bind:value={displayInstrument} on:change="{updateInstrument}">
             {#each intrumentsArray as instrument}
                 <option value="{display_instruments[instrument]}">{instrument}</option>
             {/each}
@@ -60,4 +67,10 @@
     </div>
 </form>
 
-<Fretboard {displayInstrument} />
+<!-- <Fretboard displayInstrument={displayInstrument} /> -->
+
+{#if displayInstrument == 'guitar'}
+    <Fretboard displayInstrument='guitar' />
+{:else}
+    <Fretboard displayInstrument='bass' />
+{/if}
