@@ -1,6 +1,6 @@
 <script>
     import Fretboard from "./Fretboard.svelte";
-    import { noteList, modes, display_styles, display_instruments,instrumentStrings} from "../lib/Utils.js";
+    import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
     
     const modesArray = Object.keys(modes);
@@ -21,17 +21,10 @@
         <span>Note:</span>
         <select bind:value={props.displayRoot}>
             {#each noteList as note}
-                {#if (note == $rootNote)}
-                    <option value="{note}" selected="selected">
-                        {note}
-                    </option>
-                {:else}
-                    <option value="{note}">{note}</option>
-                {/if}
+                <option value="{note}">{note}</option>
             {/each}
         </select>
     </div>
-
     <div>
         <span>Mode:</span>
         <select bind:value={props.displayMode}>
@@ -40,7 +33,6 @@
             {/each}
         </select>
     </div>
-
     <div>
         <span>Display style:</span>
         <select bind:value={props.displayStyle}>
@@ -49,7 +41,6 @@
             {/each}
         </select>
     </div>
-
     <div>
         <span>Instrument:</span>
         <select bind:value={props.displayInstrument}>
