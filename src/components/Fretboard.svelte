@@ -14,7 +14,7 @@
 
     let fbWidth;
     let numberOfStrings;
-    if (displayInstrument === 'guitar') {
+    if (displayInstrument == 'guitar') {
         fbWidth = 152;
         numberOfStrings = 6;
     } else {
