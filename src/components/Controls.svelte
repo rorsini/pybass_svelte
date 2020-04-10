@@ -7,32 +7,44 @@
     let displayRoot = $rootNote;
     let displayStyle = $style;
     let displayMode = $mode;
+    let props;
 
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
+    $: props = { 
+        displayInstrument: displayInstrument,
+        displayRoot: displayRoot,
+        displayStyle: displayStyle,
+        displayMode: displayMode
+    };
+
     const updateRoot = event => {
-        displayRoot = event.target.value;
+        //props.displayRoot = event.target.value;
     };
 
     const updateMode = event => {
-        displayMode = event.target.value;
+        //props.displayMode = event.target.value;
     };
 
     const updateStyle = event => {
-        displayStyle = event.target.value;
+        //props.displayStyle = event.target.value;
     };
 
     const updateInstrument = event => {
-        displayInstrument = event.target.value;
+        //props.displayInstrument = event.target.value;
     };
 
+    const handleSubmit = event => {event};
+
+    console.log('props:');
+    console.log(props);
 
 </script>
 
 <h3>Controls</h3>
 
-<form on:submit|preventDefault>
+<form on:submit|preventDefault={handleSubmit}>
     <div>
         <span>Note:</span>
         <select bind:value={displayRoot} on:change="{updateRoot}">
@@ -76,15 +88,10 @@
     </div>
 </form>
 
-<!-- <Fretboard displayInstrument={displayInstrument} /> -->
+<!-- <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} /> -->
 
 {#if displayInstrument == 'guitar'}
-    <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
+    <Fretboard {...props} />
 {:else}
-    <Fretboard {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
+    <Fretboard {...props} />
 {/if}
-
-
-<!-- {#if displayInstrument }
-    <Fretboard {displayInstrument} {displayStyle} />
-{/if} -->
