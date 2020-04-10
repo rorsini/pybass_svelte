@@ -1,5 +1,6 @@
 <script>
-    import { note_list, modes, display_styles, display_instruments } from "../lib/Utils.js";
+    import Fretboard from "./Fretboard.svelte";
+    import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
 
     const modesArray = Object.keys(modes);
@@ -9,6 +10,8 @@
         rootNote.update(value => value );
     };
 
+    let displayInstrument = 'bass';
+
 </script>
 
 <h3>Controls</h3>
@@ -17,7 +20,7 @@
     <div>
         <span>Note:</span>
         <select bind:value={$rootNote} on:change="{handleSubmit}">
-            {#each note_list as note}
+            {#each noteList as note}
                 {#if (note == $rootNote)}
                     <option value="{note}" selected="selected">
                         {note}
@@ -56,3 +59,5 @@
         </select>
     </div>
 </form>
+
+<Fretboard {displayInstrument} />

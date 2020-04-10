@@ -63,9 +63,70 @@ export const frets = [ 30, 114, 194, 269,
 
 export const strngs = [ 12.5, 37.5, 62.5, 87.5, 112.5, 137.5 ];
 
+export const instrumentStrings = {
+  guitar: strngs,
+  bass: strngs.slice(0,4)
+};
+
+export let mapCoords = coords => {
+  return [frets[coords[1]], strngs[coords[0]]];
+};
+
 export const fretDotPositions = {
   single: [233.5, 374, 500, 612, 881.5, 952, 1015],
   double: [758]
+};
+
+export const bassNotesMatrix = [
+  ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+  ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+  ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+  ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+];
+
+export const guitarNotesMatrix = [
+  ['E', 'F', 'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+  ['B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G' ],
+  ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+  ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+  ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+  ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+];
+
+export let guitarNotesPositions = () => {
+  let notesPositions = {};
+  for (let i = 0; i < noteList.length; i++) {
+    let positions = [];
+    let this_note_name = noteList[i];
+    for (let pos_string = 0; pos_string <= 5; pos_string++) {
+        let guitar_string = guitarNotesMatrix[pos_string];
+        for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
+            if (guitar_string[pos_fret] === this_note_name) {
+                positions.push([pos_string, pos_fret]);
+            }
+        }
+    }
+    notesPositions[this_note_name] = positions;
+  }
+  return notesPositions;
+};
+
+export let bassNotesPositions = () => {
+  let notesPositions = {};
+  for (let i = 0; i < noteList.length; i++) {
+    let positions = [];
+    let this_note_name = noteList[i];
+    for (let pos_string = 0; pos_string <= 3; pos_string++) {
+      let bass_string = bassNotesMatrix[pos_string];
+      for (let pos_fret = 0; pos_fret < 21; pos_fret++) {
+        if (bass_string[pos_fret] === this_note_name) {
+          positions.push([pos_string, pos_fret]);
+        }
+      }
+    }
+    notesPositions[this_note_name] = positions;
+  }
+  return notesPositions;
 };
 
 export const modes = {
@@ -101,7 +162,7 @@ export const note_names = {
   'G# / Ab': 'G#'
 };
 
-export const note_list = [
+export const noteList = [
   'C',
   'C#',
   'D',
@@ -126,3 +187,27 @@ export const display_instruments = {
   'Guitar': 'guitar',
   'Bass': 'bass'
 };
+
+export const noteColors = {
+  'C': '#ca0d3c', 'Cb': '#ca0d3c',
+  'G': '#e43a23',
+  'D': '#ec6f21',
+  'A': '#f6ac1a',
+  'E': '#ebda10',
+  'B': '#97c82b',
+  'Gb': '#36a938', 'F#': '#36a938',
+  'Db': '#009a82', 'C#': '#009a82',
+  'Ab': '#0084d4', 'G#': '#0084d4',
+  'Eb': '#2f4d9e', 'D#': '#2f4d9e',
+  'Bb': '#6d2a86', 'A#': '#6d2a86',
+  'F':  '#970a7c', 'E#': '#970a7c',
+};
+
+export const scale_degree_color = '#2f4d9e';
+export const scale_degree_root_color = '#69baea';
+
+export const scale_degree_stroke_color = '#69baea';
+export const scale_degree_root_stroke_color = '#333';
+
+export const note_name_stroke_color = '#4b4b4b';
+export const note_name_root_stroke_color = '#000';

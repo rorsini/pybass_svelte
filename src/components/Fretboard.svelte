@@ -1,16 +1,18 @@
 <script>
+    export let displayInstrument;
+
     import Nut from "./Nut.svelte";
     import Note from "./Note.svelte";
     import Notes from "./Notes.svelte";
     import Background from "./Background.svelte";
     import Fret from "./Fret.svelte";
     import String from "./String.svelte";
-    import { frets, strngs, fretDotPositions } from "../lib/Utils.js"
-    import { rootNote, mode, style, instrument } from '../state/stores.js';
+    import { frets, strngs, fretDotPositions, instrumentStrings } from "../lib/Utils.js"
+    import { rootNote, mode, style } from '../state/stores.js';
 
     let fbWidth;
     let numberOfStrings;
-    if ($instrument === 'guitar') {
+    if (displayInstrument === 'guitar') {
         fbWidth = 152;
         numberOfStrings = 6;
     } else {
@@ -70,9 +72,9 @@
         <circle cx={dot.x} cy={dot.y} r="7" stroke="none" fill="#000000" />
     {/each}
 
-    {#each strngs as string}
+    {#each instrumentStrings[displayInstrument] as string}
         <String {string} {fbLength} />
     {/each}
 
-    <Notes />
+    <Notes {displayInstrument} />
 </svg>
