@@ -75,7 +75,7 @@
     <Fretboard {...props} bind:svg />
 {/if}
 <br />
-<button on:mousedown={ev => saveSvg(svg, name=downloadFileName)}>Save SVG</button>
+<button on:mousedown={ev => saveSvg(svg, downloadFileName)}>Save SVG</button>
 
 <style>
     button {
