@@ -33,6 +33,7 @@
     x="{textXPos}"
     y="{yPos + 3}"
     font-size="10"
+    font-family="monospace"
     font-weight="bold"
     fill="{text_color}">{label}</text>
 
