@@ -144,7 +144,15 @@ export const modes = {
   'Harmonic Minor':    '0,2,3,5,7,8,11',
   'Phrygian Dominant': '0,1,4,5,7,8,10',
   'Spanish Phrygian':  '0,1,4,5,7,8,10',
-  'Root only': '0'
+  'Root only':         '0'
+};
+
+export const normalizeModes = () => {
+  let newModes = {}
+  for ( const mode in modes ) {
+    newModes[modes[mode]] = mode;
+  }
+  return newModes;
 };
 
 export const note_names = {
@@ -211,3 +219,19 @@ export const scale_degree_root_stroke_color = '#333';
 
 export const note_name_stroke_color = '#4b4b4b';
 export const note_name_root_stroke_color = '#000';
+
+
+export const saveSvg = (svg, name = 'download.svg') => {
+  confirm(`Save file: "${name}.svg" ?`);
+  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  var svgData = svg.outerHTML;
+  var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+  var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+  var svgUrl = URL.createObjectURL(svgBlob);
+  var downloadLink = document.createElement("a");
+  downloadLink.href = svgUrl;
+  downloadLink.download = name;
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+};

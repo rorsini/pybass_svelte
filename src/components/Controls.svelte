@@ -2,7 +2,8 @@
     import Fretboard from "./Fretboard.svelte";
     import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
-    
+    import { saveSvg, normalizeModes } from '../lib/Utils';
+
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
@@ -11,6 +12,8 @@
     let displayStyle = $style;
     let displayMode = $mode;
     let svg;
+
+    $: downloadFileName = `${displayRoot}_${normalizeModes()[displayMode].replace(' ','_')}_${displayStyle}`;
 
     let props;
     $: props = { 
@@ -71,3 +74,29 @@
 {:else}
     <Fretboard {...props} bind:svg />
 {/if}
+<br />
+<button on:mousedown={ev => saveSvg(svg, name=downloadFileName)}>Save SVG</button>
+
+<style>
+    button {
+        color: black;
+        background: lightgreen;
+        border: 1px #DADADA solid;
+        padding: 5px 10px;
+        border-radius: 2px;
+        font-weight: bold;
+        font-size: 9pt;
+        outline: none;
+    }
+
+    button:hover {
+        border: 1px #C6C6C6 solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: greenyellow;
+    }
+
+    button:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;   
+    }
+</style>
