@@ -15,7 +15,7 @@
     let textXPos =
         (label.length == 1) ?
             xPos + 6 :
-            xPos + 3;
+            xPos + 2;
 </script>
 
 <rect
@@ -31,9 +31,9 @@
 
 <text
     x="{textXPos}"
-    y="{yPos + 3}"
-    font-size="10"
-    font-family="monospace"
+    y="{yPos + 4}"
+    font-size="14"
+    font-family="Courier New, Arial, Helvetica, sans-serif"
     font-weight="bold"
     fill="{text_color}">{label}</text>
 

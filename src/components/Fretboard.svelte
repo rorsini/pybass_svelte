@@ -62,20 +62,22 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   style="overflow: hidden; position: relative;"
   bind:this={svg}>
-    <Background {fbLength} {fbWidth} />
-    <Nut x={distanceAboveNut}
-        y={0}
-        width={5}
-        height={fbWidth}
-        {fbWidth} />
-    {#each frets as fret, i}
-        <Fret {length} {distanceAboveNut} {fbWidth} fretNum={i} />
-    {/each}
-    {#each dotsToRender as dot}
-        <circle cx={dot.x} cy={dot.y} r="7" stroke="none" fill="#000000" />
-    {/each}
-    {#each instrumentStrings[displayInstrument] as string}
-        <String {string} {fbLength} />
-    {/each}
-    <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
+    <g>
+        <Background {fbLength} {fbWidth} />
+        <Nut x={distanceAboveNut}
+            y={0}
+            width={5}
+            height={fbWidth}
+            {fbWidth} />
+        {#each frets as fret, i}
+            <Fret {length} {distanceAboveNut} {fbWidth} fretNum={i} />
+        {/each}
+        {#each dotsToRender as dot}
+            <circle cx={dot.x} cy={dot.y} r="7" stroke="none" fill="#000000" />
+        {/each}
+        {#each instrumentStrings[displayInstrument] as string}
+            <String {string} {fbLength} />
+        {/each}
+        <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
+    </g>
 </svg>
