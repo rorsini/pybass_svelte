@@ -29,7 +29,6 @@
     notes['Cb'] = notes['B'];
     notes['Db'] = notes['C#'];
 
-
     const thisScale = displayMode ? gotScales.note(displayRoot).scale(displayMode.split(","), true).notes.map(s => {
         return s && s.substring(0, 2)
     }) : [];
@@ -88,20 +87,6 @@
     }
 </script>
 
-<div class="debug">
-[Notes.svelte]<br />
-displayInstrument = {displayInstrument}<br />
-displayStyle = {displayStyle}<br />
-displayRoot = {displayRoot}<br />
-displayMode = {displayMode}<br />
-</div>
-
 {#each notesToRender as noteProps}
-
     <Note {...noteProps}/>
-
 {/each}
-
-<style>
-    .debug { font-size: 12px; font-weight: bold; }
-</style>

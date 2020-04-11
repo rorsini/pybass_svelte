@@ -54,14 +54,6 @@
     });
 </script>
 
-<div class="debug">
-[Fretboard.svelte]<br />
-displayInstrument = {displayInstrument}<br />
-displayStyle = {displayStyle}<br />
-displayRoot = {displayRoot}<br />
-displayMode = {displayMode}<br />
-</div>
-
 <svg
   height="{fbWidth}" 
   width="{fbLength}"
@@ -87,7 +79,3 @@ displayMode = {displayMode}<br />
     {/each}
     <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
 </svg>
-
-<style>
-    .debug { font-size: 12px; font-weight: bold; }
-</style>

@@ -29,14 +29,6 @@
     const handleSubmit = (e) => {};
 </script>
 
-<div class="debug">
-[Controls.svelte]<br />
-displayInstrument = {props.displayInstrument}<br />
-displayStyle = {props.displayStyle}<br />
-displayRoot = {props.displayRoot}<br />
-displayMode = {props.displayMode}<br />
-</div>
-
 <h3>Controls</h3>
 
 <form on:submit|preventDefault={handleSubmit}>
@@ -79,7 +71,3 @@ displayMode = {props.displayMode}<br />
 {:else}
     <Fretboard {...props} bind:svg />
 {/if}
-
-<style>
-    .debug { font-size: 12px; font-weight: bold; }
-</style>
