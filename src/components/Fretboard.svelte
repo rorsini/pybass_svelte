@@ -3,6 +3,11 @@
     export let displayStyle;
     export let displayRoot;
     export let displayMode;
+    export let svg;
+
+    export const namespace = 'http://www.w3.org/2000/svg';
+
+    displayRoot = displayRoot;
     
     import Nut from "./Nut.svelte";
     import Note from "./Note.svelte";
@@ -47,36 +52,42 @@
             y: (fbWidth - (fbWidth / 4))
         });
     });
-
 </script>
 
+<div class="debug">
+[Fretboard.svelte]<br />
+displayInstrument = {displayInstrument}<br />
+displayStyle = {displayStyle}<br />
+displayRoot = {displayRoot}<br />
+displayMode = {displayMode}<br />
+</div>
+
 <svg
-  height="{fbLength + 50}" 
+  height="{fbWidth}" 
   width="{fbLength}"
   version="1.1" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  style="overflow: hidden; position: relative;">
-
+  style="overflow: hidden; position: relative;"
+  bind:this={svg}>
     <Background {fbLength} {fbWidth} />
-
     <Nut x={distanceAboveNut}
         y={0}
         width={5}
         height={fbWidth}
         {fbWidth} />
-
     {#each frets as fret, i}
         <Fret {length} {distanceAboveNut} {fbWidth} fretNum={i} />
     {/each}
-
     {#each dotsToRender as dot}
         <circle cx={dot.x} cy={dot.y} r="7" stroke="none" fill="#000000" />
     {/each}
-
     {#each instrumentStrings[displayInstrument] as string}
         <String {string} {fbLength} />
     {/each}
-
     <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
 </svg>
+
+<style>
+    .debug { font-size: 12px; font-weight: bold; }
+</style>

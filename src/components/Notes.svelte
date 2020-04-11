@@ -3,6 +3,8 @@
     export let displayStyle;
     export let displayRoot;
     export let displayMode;
+
+    console.log("in Notes.svelte: ", displayRoot);
     
     import gotScales from "got-scales";
     import Note from "./Note.svelte";
@@ -86,8 +88,20 @@
     }
 </script>
 
+<div class="debug">
+[Notes.svelte]<br />
+displayInstrument = {displayInstrument}<br />
+displayStyle = {displayStyle}<br />
+displayRoot = {displayRoot}<br />
+displayMode = {displayMode}<br />
+</div>
+
 {#each notesToRender as noteProps}
 
     <Note {...noteProps}/>
 
 {/each}
+
+<style>
+    .debug { font-size: 12px; font-weight: bold; }
+</style>

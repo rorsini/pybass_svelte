@@ -6,20 +6,43 @@
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
-    let props = { 
-        displayInstrument: $instrument,
-        displayRoot: $rootNote,
-        displayStyle: $style,
-        displayMode: $mode
+    let displayInstrument = $instrument;
+    let displayRoot = $rootNote;
+    let displayStyle = $style;
+    let displayMode = $mode;
+    let svg;
+
+    let props;
+    $: props = { 
+        displayInstrument: displayInstrument,
+        displayRoot: displayRoot,
+        displayStyle: displayStyle,
+        displayMode: displayMode
     };
+
+    const changeRoot = (e) => {
+        displayRoot = e.target.value;
+        console.log('new props:');
+        console.log(props);
+    };
+
+    const handleSubmit = (e) => {};
 </script>
+
+<div class="debug">
+[Controls.svelte]<br />
+displayInstrument = {props.displayInstrument}<br />
+displayStyle = {props.displayStyle}<br />
+displayRoot = {props.displayRoot}<br />
+displayMode = {props.displayMode}<br />
+</div>
 
 <h3>Controls</h3>
 
-<form on:submit|preventDefault={() => ({})}>
+<form on:submit|preventDefault={handleSubmit}>
     <div>
         <span>Note:</span>
-        <select bind:value={props.displayRoot}>
+        <select bind:value={props.displayRoot} on:change={changeRoot}>
             {#each noteList as note}
                 <option value="{note}">{note}</option>
             {/each}
@@ -52,7 +75,11 @@
 </form>
 
 {#if props.displayInstrument == 'guitar'}
-    <Fretboard {...props} />
+    <Fretboard {...props} bind:svg />
 {:else}
-    <Fretboard {...props} />
+    <Fretboard {...props} bind:svg />
 {/if}
+
+<style>
+    .debug { font-size: 12px; font-weight: bold; }
+</style>
