@@ -8,12 +8,12 @@ export const getMinorScale = (note) => {
   return gotScales.note(note).scale('minor').getNotes().map((n) => n.substring(0, 2));
 };
 
-export const getMajorChord = (note) => {
-  return gotScales.chord(note + 'maj').getNotes().map((n) => n.substring(0, 2));
+export const getMajorarpeggio = (note) => {
+  return gotScales.arpeggio(note + 'maj').getNotes().map((n) => n.substring(0, 2));
 };
 
-export const getMinorChord = (note) => {
-  return gotScales.chord(note + 'm').getNotes().map((n) => n.substring(0, 2));
+export const getMinorarpeggio = (note) => {
+  return gotScales.arpeggio(note + 'm').getNotes().map((n) => n.substring(0, 2));
 };
 
 export const getColor = (note, scale) => {
@@ -187,7 +187,7 @@ export const noteList = [
 
 export const display_styles = [
   'notes',
-  'chord',
+  'arpeggio',
   'degrees'
 ];
 

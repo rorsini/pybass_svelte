@@ -14,17 +14,31 @@
     let svg;
 
     $: downloadFileName = `${displayRoot}_${normalizeModes()[displayMode].replace(' ','_')}_${displayStyle}`;
+    $: fretboardTitle = `"${displayRoot}" ${normalizeModes()[displayMode].replace(' ','_')} - ${displayStyle}`;
 
     let props;
     $: props = { 
         displayInstrument: displayInstrument,
         displayRoot: displayRoot,
         displayStyle: displayStyle,
-        displayMode: displayMode
+        displayMode: displayMode,
+        fretboardTitle: fretboardTitle
     };
 
     const changeRoot = (e) => {
         displayRoot = e.target.value;
+        console.log('new props:');
+        console.log(props);
+    };
+
+    const changeMode = (e) => {
+        displayMode = e.target.value;
+        console.log('new props:');
+        console.log(props);
+    };
+
+    const changeStyle = (e) => {
+        displayStyle = e.target.value;
         console.log('new props:');
         console.log(props);
     };
@@ -45,7 +59,7 @@
     </div>
     <div>
         <span>Mode:</span>
-        <select bind:value={props.displayMode}>
+        <select bind:value={props.displayMode} on:change={changeMode}>
             {#each modesArray as mode}
                 <option value="{modes[mode]}">{mode}</option>
             {/each}
@@ -53,7 +67,7 @@
     </div>
     <div>
         <span>Display style:</span>
-        <select bind:value={props.displayStyle}>
+        <select bind:value={props.displayStyle} on:change={changeStyle}>
             {#each display_styles as style}
                 <option value="{style}">{style}</option>
             {/each}

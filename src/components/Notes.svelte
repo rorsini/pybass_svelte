@@ -47,8 +47,8 @@
             let note_label = note;
             let text_color = 'black';
             let stroke_color = Utils.note_name_stroke_color;
-            if (displayStyle && (displayStyle === "degrees" || displayStyle === "chord")) {
-                if (displayStyle === "chord") {
+            if (displayStyle && (displayStyle === "degrees" || displayStyle === "arpeggio")) {
+                if (displayStyle === "arpeggio") {
                     if (scale_degree % 2 === 0) {
                         continue;
                     }

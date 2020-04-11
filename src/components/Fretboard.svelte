@@ -1,14 +1,4 @@
 <script>
-    export let displayInstrument;
-    export let displayStyle;
-    export let displayRoot;
-    export let displayMode;
-    export let svg;
-
-    export const namespace = 'http://www.w3.org/2000/svg';
-
-    displayRoot = displayRoot;
-    
     import Nut from "./Nut.svelte";
     import Note from "./Note.svelte";
     import Notes from "./Notes.svelte";
@@ -16,6 +6,16 @@
     import Fret from "./Fret.svelte";
     import String from "./String.svelte";
     import { frets, strngs, fretDotPositions, instrumentStrings } from "../lib/Utils.js"
+
+    export let displayInstrument;
+    export let displayStyle;
+    export let displayRoot;
+    export let displayMode;
+    export let fretboardTitle;
+
+    $: fretboardTitle = fretboardTitle.replace(/_/g, ' ');
+
+    export let svg;
 
     let fbWidth;
     let numberOfStrings;
@@ -55,14 +55,15 @@
 </script>
 
 <svg
-  height="{fbWidth}" 
+  height="{fbWidth + 30}" 
   width="{fbLength}"
   version="1.1" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   style="overflow: hidden; position: relative;"
   bind:this={svg}>
-    <g>
+    <g font-size="12" font-family="Arial, Helvetica, sans-serif"
+        font-weight="bold">
         <Background {fbLength} {fbWidth} />
         <Nut x={distanceAboveNut}
             y={0}
@@ -79,5 +80,7 @@
             <String {string} {fbLength} />
         {/each}
         <Notes {displayInstrument} {displayMode} {displayStyle} {displayRoot} />
+
+        <text x="0" y="{fbWidth + 20}">{fretboardTitle}</text>
     </g>
 </svg>
