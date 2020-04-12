@@ -12,9 +12,6 @@
     export let displayRoot;
     export let displayMode;
     export let fretboardTitle;
-
-    $: fretboardTitle = fretboardTitle.replace(/_/g, ' ');
-
     export let svg;
 
     let fbWidth;

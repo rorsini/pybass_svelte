@@ -192,8 +192,14 @@ export const display_styles = [
 ];
 
 export const display_instruments = {
-  'Guitar': 'guitar',
-  'Bass': 'bass'
+  'Guitar': {
+    label: 'guitar',
+    numStrings: 6
+  },
+  'Bass': {
+    label: 'bass',
+    numStrings: 4
+  }
 };
 
 export const noteColors = {

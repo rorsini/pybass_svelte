@@ -77,7 +77,7 @@
         <span>Instrument:</span>
         <select bind:value={props.displayInstrument}>
             {#each intrumentsArray as instrument}
-                <option value="{display_instruments[instrument]}">{instrument}</option>
+                <option value="{display_instruments[instrument].label}">{instrument}</option>
             {/each}
         </select>
     </div>
