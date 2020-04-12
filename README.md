@@ -79,3 +79,8 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+## Testing with Jest
+
+For setup instructions, see:
+https://dev.to/jpblancodb/testing-svelte-components-with-jest-53h3
