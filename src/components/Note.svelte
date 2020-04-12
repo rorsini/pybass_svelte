@@ -1,11 +1,11 @@
 <script>
-    export let xPos;
-    export let yPos;
+    export let xPos = 0;
+    export let yPos = 0;
     export let label;
-    export let note_color;
-    export let text_color;
-    export let scale_degree;
-    export let stroke_color;
+    export let note_color = '';
+    export let text_color = '';
+    export let scale_degree = 0;
+    export let stroke_color = '';
 
     let strokeWidth;
     $: strokeWidth = (scale_degree == 1) ? 3 : 1;
