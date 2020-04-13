@@ -18,7 +18,9 @@
                 <a href="https://github.com/rorsini/pybass_svelte">GitHub</a>
             </div>
             <div class="navbar-item">
-                <a href="/">Log in</a>
+                <a href="https://www.oreilly.com/pub/au/2493">
+                    <img src="/images/profile_mockup.png" alt="User Profile">
+                </a>
             </div>
         </div>
     </nav>
