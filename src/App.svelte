@@ -2,7 +2,6 @@
     import Controls from "./components/Controls.svelte";
 </script>
 
-
 <div class="container">
     <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -32,14 +31,15 @@
     </div>
 </div>
 <footer class="footer">
-  <div class="content has-text-centered">
-    <p class="is-size-6">
-        <strong>PyBass</strong> is by <a href="https://www.tupleshop.com">TupleShop</a>. The source code is licensed under 
-        <a href="https://github.com/rorsini/pybass_svelte/blob/master/LICENSE">GPL-3.0</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
+    <div class="content has-text-centered">
+        <p class="is-size-6">
+            <strong>PyBass</strong> is by <a href="https://www.tupleshop.com">TupleShop</a>. The source code is licensed under 
+            <a href="https://github.com/rorsini/pybass_svelte/blob/master/LICENSE">GPL-3.0</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
 </footer>
+
 <style>
     .pybass-content {
         padding-left: 30px;
