@@ -7,66 +7,53 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="96"
-   inkscape:export-xdpi="96"
-   inkscape:export-filename="/Users/Rob/projects/pybass_svelte/src/graphics/pybass_logo.png"
-   sodipodi:docname="pybass_logo.svg"
-   inkscape:version="1.0rc1 (09960d6, 2020-04-09)"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 42.333333 13.229167"
+   width="170"
    height="50"
-   width="160">
+   viewBox="0 0 44.979166 13.229167"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0rc1 (09960d6, 2020-04-09)"
+   sodipodi:docname="pybass_logo.svg"
+   inkscape:export-filename="/Users/Rob/projects/pybass_svelte/src/graphics/pybass_logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2">
     <filter
-       height="1.0878815"
-       y="-0.043940743"
-       width="1.0971247"
-       x="-0.048562364"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
        id="filter1060"
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always">
+       x="-0.048562363"
+       width="1.0971247"
+       y="-0.043940742"
+       height="1.0878814">
       <feGaussianBlur
-         id="feGaussianBlur1062"
+         inkscape:collect="always"
          stdDeviation="0.19587177"
-         inkscape:collect="always" />
-    </filter>
-    <filter
-       height="1.0157465"
-       y="-0.0078732588"
-       width="1.0044822"
-       x="-0.0022410926"
-       id="filter1068"
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always">
-      <feGaussianBlur
-         id="feGaussianBlur1070"
-         stdDeviation="0.035096109"
-         inkscape:collect="always" />
+         id="feGaussianBlur1062" />
     </filter>
   </defs>
   <sodipodi:namedview
-     width="268px"
-     units="px"
-     inkscape:window-maximized="0"
-     inkscape:window-y="22"
-     inkscape:window-x="1440"
-     inkscape:window-height="1156"
-     inkscape:window-width="1892"
-     showgrid="false"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="mm"
-     inkscape:cy="71.717833"
-     inkscape:cx="57.133146"
-     inkscape:zoom="2.9629732"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
+     id="base"
      pagecolor="#ffffff"
-     id="base" />
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.9629732"
+     inkscape:cx="57.133146"
+     inkscape:cy="71.717833"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1892"
+     inkscape:window-height="1156"
+     inkscape:window-x="1440"
+     inkscape:window-y="22"
+     inkscape:window-maximized="0"
+     units="px"
+     width="268px" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -80,77 +67,77 @@
     </rdf:RDF>
   </metadata>
   <g
-     style="filter:url(#filter1060)"
-     inkscape:label="clef bg"
+     inkscape:groupmode="layer"
      id="layer3"
-     inkscape:groupmode="layer">
+     inkscape:label="clef bg"
+     style="filter:url(#filter1060)">
     <g
-       inkscape:export-ydpi="123.44574"
-       inkscape:export-xdpi="123.44574"
-       style="display:inline;opacity:1;fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.00119079,0,0,-0.00111108,1.6627898,13.83763)"
-       fill="#000000"
+       id="g84-9"
        stroke="none"
-       id="g84-9">
+       fill="#000000"
+       transform="matrix(0.00119079,0,0,-0.00111108,1.6627898,13.83763)"
+       style="display:inline;opacity:1;fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       inkscape:export-xdpi="123.44574"
+       inkscape:export-ydpi="123.44574">
       <path
-         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-         inkscape:connector-curvature="0"
+         id="path78-7"
          d="M 3252,11014 C 2303,10911 1493,10464 1048,9800 961,9670 853,9450 806,9305 627,8765 688,8105 950,7725 c 66,-94 223,-246 326,-314 586,-388 1408,-351 1820,81 108,113 182,246 226,408 20,75 23,106 22,270 0,168 -3,194 -27,283 -33,123 -90,254 -153,349 -55,84 -221,253 -309,315 -78,56 -203,117 -285,140 -95,26 -309,23 -510,-7 -101,-15 -202,-24 -290,-24 -125,-1 -139,1 -185,24 -42,21 -55,35 -80,84 -38,76 -47,200 -20,293 135,472 967,928 1770,969 448,23 862,-111 1177,-380 311,-266 569,-781 667,-1331 48,-273 56,-374 56,-745 -1,-270 -5,-392 -18,-510 C 5053,6883 4887,6293 4585,5674 3996,4463 3028,3465 1280,2270 820,1955 758,1909 648,1791 c -37,-39 -80,-95 -95,-124 -70,-135 -4,-267 135,-267 147,0 555,198 1237,602 928,549 1222,728 1545,939 349,229 776,538 1066,771 1276,1027 2059,2181 2293,3382 175,895 50,1718 -365,2408 -287,477 -755,904 -1284,1173 -365,185 -744,295 -1175,340 -178,19 -580,18 -753,-1 z"
-         id="path78-7" />
-      <path
-         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          inkscape:connector-curvature="0"
+         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+      <path
+         id="path80-5"
          d="m 7811,10079 c -126,-22 -253,-93 -349,-194 -151,-159 -213,-377 -167,-594 32,-155 95,-262 228,-387 92,-88 204,-152 312,-179 78,-20 242,-20 320,0 291,74 498,338 499,635 0,119 -14,181 -71,298 -37,79 -58,107 -131,180 -125,124 -223,188 -352,226 -68,20 -217,28 -289,15 z"
-         id="path80-5" />
-      <path
-         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          inkscape:connector-curvature="0"
+         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+      <path
+         id="path82-6"
          d="m 7770,7434 c -108,-28 -218,-91 -294,-168 -124,-125 -184,-258 -193,-426 -13,-236 79,-441 272,-603 213,-179 491,-215 735,-96 69,34 101,58 170,128 134,135 192,275 193,461 1,269 -155,503 -434,650 -42,22 -105,46 -140,55 -80,18 -236,18 -309,-1 z"
-         id="path82-6" />
+         inkscape:connector-curvature="0"
+         style="fill:#008000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
     </g>
   </g>
   <g
-     style="display:inline;filter:url(#filter1068)"
-     id="layer1"
+     inkscape:label="main"
      inkscape:groupmode="layer"
-     inkscape:label="main">
+     id="layer1"
+     style="display:inline">
     <text
-       inkscape:export-ydpi="123.44574"
-       inkscape:export-xdpi="123.44574"
-       transform="scale(0.99239632,1.0076619)"
-       id="text12"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.27123px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:#00f33b;stroke-width:0.207;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.558704"
+       x="14.413574"
        y="8.0571661"
-       x="13.347131"
-       style="font-style:normal;font-weight:normal;font-size:8.27123px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.206781"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'PT Sans Caption';-inkscape-font-specification:'PT Sans Caption Bold';stroke-width:0.206781"
-         y="8.0571661"
-         x="13.347131"
-         id="tspan10"
-         sodipodi:role="line">PyBass</tspan></text>
-    <g
-       inkscape:export-ydpi="123.44574"
+       id="text12"
+       transform="scale(0.99239635,1.0076619)"
        inkscape:export-xdpi="123.44574"
-       style="opacity:1;fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.00119079,0,0,-0.00111108,2.1919565,13.83763)"
-       fill="#000000"
+       inkscape:export-ydpi="123.44574"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="14.413574"
+         y="8.0571661"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'PT Sans Caption';-inkscape-font-specification:'PT Sans Caption Bold';fill:#000000;fill-opacity:1;stroke:#00f33b;stroke-width:0.207;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.558704">PyBass</tspan></text>
+    <g
+       id="g84"
        stroke="none"
-       id="g84">
+       fill="#000000"
+       transform="matrix(0.00119079,0,0,-0.00111108,2.1919565,13.83763)"
+       style="opacity:1;fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       inkscape:export-xdpi="123.44574"
+       inkscape:export-ydpi="123.44574">
       <path
-         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-         inkscape:connector-curvature="0"
+         id="path78"
          d="M 3252,11014 C 2303,10911 1493,10464 1048,9800 961,9670 853,9450 806,9305 627,8765 688,8105 950,7725 c 66,-94 223,-246 326,-314 586,-388 1408,-351 1820,81 108,113 182,246 226,408 20,75 23,106 22,270 0,168 -3,194 -27,283 -33,123 -90,254 -153,349 -55,84 -221,253 -309,315 -78,56 -203,117 -285,140 -95,26 -309,23 -510,-7 -101,-15 -202,-24 -290,-24 -125,-1 -139,1 -185,24 -42,21 -55,35 -80,84 -38,76 -47,200 -20,293 135,472 967,928 1770,969 448,23 862,-111 1177,-380 311,-266 569,-781 667,-1331 48,-273 56,-374 56,-745 -1,-270 -5,-392 -18,-510 C 5053,6883 4887,6293 4585,5674 3996,4463 3028,3465 1280,2270 820,1955 758,1909 648,1791 c -37,-39 -80,-95 -95,-124 -70,-135 -4,-267 135,-267 147,0 555,198 1237,602 928,549 1222,728 1545,939 349,229 776,538 1066,771 1276,1027 2059,2181 2293,3382 175,895 50,1718 -365,2408 -287,477 -755,904 -1284,1173 -365,185 -744,295 -1175,340 -178,19 -580,18 -753,-1 z"
-         id="path78" />
-      <path
-         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          inkscape:connector-curvature="0"
+         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+      <path
+         id="path80"
          d="m 7811,10079 c -126,-22 -253,-93 -349,-194 -151,-159 -213,-377 -167,-594 32,-155 95,-262 228,-387 92,-88 204,-152 312,-179 78,-20 242,-20 320,0 291,74 498,338 499,635 0,119 -14,181 -71,298 -37,79 -58,107 -131,180 -125,124 -223,188 -352,226 -68,20 -217,28 -289,15 z"
-         id="path80" />
-      <path
-         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          inkscape:connector-curvature="0"
+         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
+      <path
+         id="path82"
          d="m 7770,7434 c -108,-28 -218,-91 -294,-168 -124,-125 -184,-258 -193,-426 -13,-236 79,-441 272,-603 213,-179 491,-215 735,-96 69,34 101,58 170,128 134,135 192,275 193,461 1,269 -155,503 -434,650 -42,22 -105,46 -140,55 -80,18 -236,18 -309,-1 z"
-         id="path82" />
+         inkscape:connector-curvature="0"
+         style="fill:#00c400;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
     </g>
   </g>
 </svg>

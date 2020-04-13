@@ -27,9 +27,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer5"
      inkscape:document-units="mm"
-     inkscape:cy="544.83154"
-     inkscape:cx="293.74002"
-     inkscape:zoom="0.53060329"
+     inkscape:cy="348.48637"
+     inkscape:cx="234.05465"
+     inkscape:zoom="0.81698236"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -850,8 +850,8 @@ fw3P/9k=
        preserveAspectRatio="none"
        height="39.712692"
        width="33.628578"
-       x="-143.03271"
-       y="30.85545" />
+       x="13.542209"
+       y="17.890646" />
   </g>
   <g
      inkscape:label="Layer 2"
@@ -859,8 +859,8 @@ fw3P/9k=
      inkscape:groupmode="layer">
     <path
        inkscape:connector-curvature="0"
-       d="M -204.09606,11.271244 V 90.122177 H -31.559909 V 11.271244 Z m 78.83758,17.955848 a 21.079042,21.079042 0 0 1 0.0138,0 21.079042,21.079042 0 0 1 21.07897,21.079499 21.079042,21.079042 0 0 1 -21.07897,21.078969 21.079042,21.079042 0 0 1 -21.07896,-21.078969 21.079042,21.079042 0 0 1 21.06509,-21.079499 z"
-       style="opacity:1;fill:#ffffff;stroke:#00aa00;stroke-width:3.66254;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -38.96896,2.5839895 V 72.381179 H 113.75642 V 2.5839895 Z M 30.816404,18.478129 a 18.658725,18.658725 0 0 1 0.0122,0 18.658725,18.658725 0 0 1 18.65866,18.65913 18.658725,18.658725 0 0 1 -18.65866,18.65866 18.658725,18.658725 0 0 1 -18.658655,-18.65866 18.658725,18.658725 0 0 1 18.646375,-18.65913 z"
+       style="opacity:1;fill:#ffffff;stroke:#00aa00;stroke-width:3.242;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1233" />
     <text
        id="text1819"
@@ -879,21 +879,21 @@ fw3P/9k=
      id="layer5"
      inkscape:groupmode="layer">
     <rect
-       y="15.300626"
-       x="-89.229286"
+       y="2.3358231"
+       x="67.345634"
        height="70.734154"
        width="115.16024"
        id="rect1244"
        style="fill:#ffffff;stroke:none;stroke-width:0.337197" />
     <text
        id="text1823"
-       y="64.710899"
-       x="-86.59697"
-       style="font-style:normal;font-weight:normal;font-size:40.8296px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.02074"
+       y="49.594707"
+       x="63.366703"
+       style="font-style:normal;font-weight:normal;font-size:23.4394px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.585985"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:1.02074"
-         y="64.710899"
-         x="-86.59697"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.585985"
+         y="49.594707"
+         x="63.366703"
          id="tspan1821"
          sodipodi:role="line">Rob Orsini</tspan></text>
   </g>
