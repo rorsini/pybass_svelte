@@ -2,6 +2,39 @@
     import Controls from "./components/Controls.svelte";
 </script>
 
-<h1>PyBass - Svelte</h1>
 
-<Controls />
+<div class="container">
+    <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-logo" href="https://svelte.pybass.com">
+                <img src="/images/pybass_logo.svg" alt="PyBass logo">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end navbar-item">
+                <a href="http://www.pybass.com">PyBass (ReactJS)</a>
+            </div>
+            <div class="navbar-item">
+                <a href="https://github.com/rorsini/pybass_svelte">GitHub</a>
+            </div>
+            <div class="navbar-item">
+                <a href="/">Log in</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="secton">
+    <div class="pybass-content">
+        <br /><br />
+        <Controls />
+    </div>
+</div>
+
+<style>
+    .pybass-content {
+        padding-left: 30px;
+    }
+    .navbar {
+        padding: 10px;
+    }
+</style>

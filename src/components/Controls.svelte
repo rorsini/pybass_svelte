@@ -62,8 +62,6 @@
 
 </script>
 
-<h3>Controls</h3>
-
 <form id="controlsForm" on:submit|preventDefault={(e) => {}}>
     <div>
         <span>Note:</span>
@@ -110,7 +108,7 @@
 <style>
     button {
         color: black;
-        background: lightgreen;
+        background: rgb(0, 196, 0);
         border: 1px #DADADA solid;
         padding: 5px 10px;
         border-radius: 2px;
@@ -122,11 +120,15 @@
     button:hover {
         border: 1px #C6C6C6 solid;
         box-shadow: 1px 1px 1px #EAEAEA;
-        color: #333333;
-        background: greenyellow;
+        color: black;
+        background: rgb(0, 140, 0);
     }
 
     button:active {
         box-shadow: inset 1px 1px 1px #DFDFDF;   
+    }
+    #controlsForm {
+        padding-top: 30px;
+        padding-bottom: 10px;
     }
 </style>
