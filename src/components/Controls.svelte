@@ -128,7 +128,7 @@
         box-shadow: inset 1px 1px 1px #DFDFDF;   
     }
     #controlsForm {
-        padding-top: 30px;
+        padding-top: 50px;
         padding-bottom: 10px;
     }
 </style>
