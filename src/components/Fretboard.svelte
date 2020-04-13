@@ -12,7 +12,7 @@
     export let displayRoot;
     export let displayMode;
     export let fretboardTitle;
-    export let svg;
+    export let svg = '';
 
     let fbWidth;
     let numberOfStrings;

@@ -3,8 +3,6 @@
     export let displayStyle;
     export let displayRoot;
     export let displayMode;
-
-    console.log("in Notes.svelte: ", displayRoot);
     
     import gotScales from "got-scales";
     import Note from "./Note.svelte";

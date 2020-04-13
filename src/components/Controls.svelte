@@ -3,21 +3,56 @@
     import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
     import { saveSvg, normalizeModes } from '../lib/Utils';
-
+    import queryString from "query-string";
+    
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
-    let displayInstrument = $instrument;
-    let displayRoot = $rootNote;
-    let displayStyle = $style;
-    let displayMode = $mode;
     let svg;
 
-    $: downloadFileName = `${displayRoot}_${normalizeModes()[displayMode].replace(' ','_')}_${displayStyle}`;
-    $: fretboardTitle = `"${displayRoot}" ${normalizeModes()[displayMode].replace(' ','_')} - ${displayStyle}`;
+    let displayInstrument;
+    let displayRoot;
+    let displayStyle;
+    let displayMode;
+
+    displayInstrument = $instrument;
+    displayRoot = $rootNote;
+    displayStyle = $style;
+    displayMode = $mode;
+
+    // get url params:
+    let parsed = {};
+    if (typeof window !== 'undefined') {
+        const urlParams = queryString.parse(window.location.search);
+
+        displayInstrument = urlParams.axe ? urlParams.axe : displayInstrument;
+        displayRoot = urlParams.root ? urlParams.root.replace(/s/g, '#') : displayRoot;
+        displayStyle = urlParams.style ? urlParams.style : displayStyle;
+        displayMode = urlParams.mode ? urlParams.mode : displayMode;
+    }
+    
+    let downloadFileName = `${displayRoot}_${normalizeModes()[displayMode].replace(' ','_')}_${displayStyle}`;
+    let fretboardTitle = `"${displayRoot}" ${normalizeModes()[displayMode].replace(' ','_')} - ${displayStyle}`;
+    fretboardTitle = fretboardTitle.replace(/_/g, ' ');
+
+    const handleChange = (e) => {
+        const root = e.srcElement.form.elements[0].value;
+        const mode = e.srcElement.form.elements[1].value;
+        const style = e.srcElement.form.elements[2].value;
+        const axe = e.srcElement.form.elements[3].value;
+
+        displayInstrument = axe;
+        displayRoot = root;
+        displayStyle = style;
+        displayMode = mode;
+
+        const urlParams = `/?root=${root}&mode=${mode}&style=${style}&axe=${axe}`;
+        
+        window.location.replace(urlParams.replace(/#/g, 's'));
+    };
 
     let props;
-    $: props = { 
+    props = { 
         displayInstrument: displayInstrument,
         displayRoot: displayRoot,
         displayStyle: displayStyle,
@@ -25,33 +60,14 @@
         fretboardTitle: fretboardTitle
     };
 
-    const changeRoot = (e) => {
-        displayRoot = e.target.value;
-        console.log('new props:');
-        console.log(props);
-    };
-
-    const changeMode = (e) => {
-        displayMode = e.target.value;
-        console.log('new props:');
-        console.log(props);
-    };
-
-    const changeStyle = (e) => {
-        displayStyle = e.target.value;
-        console.log('new props:');
-        console.log(props);
-    };
-
-    const handleSubmit = (e) => {};
 </script>
 
 <h3>Controls</h3>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form id="controlsForm" on:submit|preventDefault={(e) => {}}>
     <div>
         <span>Note:</span>
-        <select bind:value={props.displayRoot} on:change={changeRoot}>
+        <select id="root" bind:value={props.displayRoot} on:change={handleChange}>
             {#each noteList as note}
                 <option value="{note}">{note}</option>
             {/each}
@@ -59,7 +75,7 @@
     </div>
     <div>
         <span>Mode:</span>
-        <select bind:value={props.displayMode} on:change={changeMode}>
+        <select id="mode" bind:value={props.displayMode} on:change={handleChange}>
             {#each modesArray as mode}
                 <option value="{modes[mode]}">{mode}</option>
             {/each}
@@ -67,7 +83,7 @@
     </div>
     <div>
         <span>Display style:</span>
-        <select bind:value={props.displayStyle} on:change={changeStyle}>
+        <select id="style" bind:value={props.displayStyle} on:change={handleChange}>
             {#each display_styles as style}
                 <option value="{style}">{style}</option>
             {/each}
@@ -75,7 +91,7 @@
     </div>
     <div>
         <span>Instrument:</span>
-        <select bind:value={props.displayInstrument}>
+        <select id="axe" bind:value={props.displayInstrument} on:change={handleChange}>
             {#each intrumentsArray as instrument}
                 <option value="{display_instruments[instrument].label}">{instrument}</option>
             {/each}

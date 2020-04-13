@@ -18,6 +18,7 @@
     "babel-jest": "^25.3.0",
     "jest": "^25.3.0",
     "jest-transform-svelte": "^2.1.1",
+    "query-string": "^6.12.1",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
