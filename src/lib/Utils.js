@@ -77,21 +77,46 @@ export const fretDotPositions = {
   double: [758]
 };
 
+// export const sharpBassNotesMatrix = [
+//   [ 'G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+//   [ 'D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+//   [ 'A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+//   [ 'E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+// ];
+
 export const bassNotesMatrix = [
-  ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
-  ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
-  ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
-  ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+  [ 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb' ],
+  [ 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb' ],
+  [ 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F' ],
+  [ 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C' ]
 ];
 
+// export const sharpGuitarNotesMatrix = [
+//   [ 'E', 'F', 'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+//   [ 'B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G' ],
+//   [ 'G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
+//   [ 'D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
+//   [ 'A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
+//   [ 'E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+// ];
+
+
 export const guitarNotesMatrix = [
-  ['E', 'F', 'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
-  ['B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G' ],
-  ['G', 'G#','A', 'A#','B', 'C', 'C#','D' ,'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#'],
-  ['D', 'D#','E', 'F', 'F#','G', 'G#','A' ,'A#','B', 'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#'],
-  ['A', 'A#','B', 'C', 'C#','D', 'D#','E' ,'F', 'F#','G', 'G#','A', 'A#','B', 'C', 'C#','D', 'D#','E', 'F' ],
-  ['E', 'F' ,'F#','G', 'G#','A', 'A#','B' ,'C', 'C#','D', 'D#','E', 'F', 'F#','G', 'G#','A', 'A#','B', 'C' ],
+  [ 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C' ],
+  [ 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G' ],
+  [ 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb' ],
+  [ 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb' ],
+  [ 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F' ],
+  [ 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C' ]
 ];
+
+export const flatMap = {
+  'D#': 'Eb',
+  'F#': 'Gb',
+  'G#': 'Ab',
+  'A#': 'Bb',
+  'C#': 'Db'
+};
 
 export let guitarNotesPositions = () => {
   let notesPositions = {};
@@ -157,31 +182,46 @@ export const normalizeModes = () => {
 
 export const note_names = {
   'A': 'A',
-  'A# / Bb': 'A#',
+  'A# / Bb': 'Bb',
   'B': 'B',
   'C': 'C',
-  'C# / Db': 'C#',
+  'C# / Db': 'Db',
   'D': 'D',
-  'D# / Eb': 'D#',
+  'D# / Eb': 'Eb',
   'E': 'E',
   'F': 'F',
-  'F# / Gb': 'F#',
+  'F# / Gb': 'Eb',
   'G': 'G',
-  'G# / Ab': 'G#'
+  'G# / Ab': 'Ab'
 };
+
+// export const sharpNoteList = [
+//   'C',
+//   'C#',
+//   'D',
+//   'D#',
+//   'E',
+//   'F',
+//   'F#',
+//   'G',
+//   'G#',
+//   'A',
+//   'A#',
+//   'B'
+// ]
 
 export const noteList = [
   'C',
-  'C#',
+  'Db',
   'D',
-  'D#',
+  'Eb',
   'E',
   'F',
-  'F#',
+  'Gb',
   'G',
-  'G#',
+  'Ab',
   'A',
-  'A#',
+  'Bb',
   'B'
 ]
 
