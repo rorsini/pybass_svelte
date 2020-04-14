@@ -18,15 +18,6 @@
         }
     }
 
-    // note aliases:
-    notes['Eb'] = notes['D#'];
-    notes['Fb'] = notes['E'];
-    notes['Gb'] = notes['F#'];
-    notes['Ab'] = notes['G#'];
-    notes['Bb'] = notes['A#'];
-    notes['Cb'] = notes['B'];
-    notes['Db'] = notes['C#'];
-
     const thisScale = displayMode ? gotScales.note(displayRoot).scale(displayMode.split(","), true).notes.map(s => {
         return s && s.substring(0, 2)
     }) : [];
@@ -34,8 +25,9 @@
     let scale_degree = 1;
     let key_index = 0;
     let notesToRender = [];
-    for (let note_index in thisScale) {
-        let note = thisScale[note_index];
+    thisScale.map((scale_note) => {
+        // this line helps make sure we don't see sharps:
+        let note = scale_note.includes('#') ? Utils.flatMap[scale_note] : scale_note;
         let note_coords = notes[note].coords;
         for (let index in note_coords) {
             let coords = note_coords[index];
@@ -82,7 +74,7 @@
             key_index++;
         } 
         scale_degree++;
-    }
+    });
 </script>
 
 {#each notesToRender as noteProps}
