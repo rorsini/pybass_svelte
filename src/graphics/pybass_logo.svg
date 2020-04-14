@@ -146,17 +146,17 @@
      inkscape:groupmode="layer">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.14441px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:#00f33b;stroke-width:0.209713;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="10.547063"
-       y="11.74194"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:#00f33b;stroke-width:0.209713;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="9.3053551"
+       y="11.562132"
        id="text12-0"
-       transform="scale(1.0068,0.99324595)"
+       transform="scale(1.0068,0.99324593)"
        inkscape:export-xdpi="123.44574"
        inkscape:export-ydpi="123.44574"><tspan
          sodipodi:role="line"
          id="tspan10-5"
-         x="10.547063"
-         y="11.74194"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'PT Sans Caption';-inkscape-font-specification:'PT Sans Caption';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.209713;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">music theory visualized</tspan></text>
+         x="9.3053551"
+         y="11.562132"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'PT Sans Caption';-inkscape-font-specification:'PT Sans Caption';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.209713;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Music theory visualized</tspan></text>
   </g>
 </svg>
