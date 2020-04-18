@@ -11,7 +11,7 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-end navbar-item">
-                <a href="http://www.pybass.com">PyBass (ReactJS)</a>
+                <a href="http://reactjs.pybass.com">PyBass (ReactJS)</a>
             </div>
             <div class="navbar-item">
                 <a href="https://github.com/rorsini/pybass_svelte">GitHub</a>
@@ -30,7 +30,7 @@
 </div>
 <footer class="footer">
     <div class="content has-text-centered">
-        <p class="is-size-6">
+        <p class="is-size-7">
             <strong>PyBass</strong> by <a href="https://www.tupleshop.com">TupleShop</a>. The source code is licensed under
             <a href="https://github.com/rorsini/pybass_svelte/blob/master/LICENSE">GPL-3.0</a>. The website content
             is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
