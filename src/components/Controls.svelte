@@ -46,7 +46,7 @@
         displayStyle = style;
         displayMode = mode;
 
-        const urlParams = `/?root=${root}&mode=${mode}&style=${style}&axe=${axe}`;
+        const urlParams = `/main/?root=${root}&mode=${mode}&style=${style}&axe=${axe}`;
         
         window.location.replace(urlParams.replace(/#/g, 's'));
     };
