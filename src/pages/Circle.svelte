@@ -1,5 +1,12 @@
 <script>
     import Controls from "../components/Controls.svelte";
+
+    export let params;
+
+    console.log("in Circle. params:");
+    console.log(params);
+    
+    
 </script>
 
 <div class="container">
@@ -30,9 +37,11 @@
 </div>
 <div class="secton">
     <div class="pybass-content">
-        <br /><br />
-        <!-- <h1 style="is-size-1">Circle of 5ths</h1> -->
-        <h1>Circle of 5ths</h1>
+        <br /><br /><br /><br />
+        <h1 class="is-size-2">Circle of 5ths</h1>
+        <center>
+            <img src="/images/circle.png" alt="Circle of 5ths">
+        </center>
     </div>
 </div>
 <footer class="footer">

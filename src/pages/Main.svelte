@@ -1,5 +1,11 @@
 <script>
     import Controls from "../components/Controls.svelte";
+
+    export let params;
+
+    console.log("in Main. params:");
+    console.log(params);
+
 </script>
 
 <div class="container">
@@ -31,7 +37,7 @@
 <div class="secton">
     <div class="pybass-content">
         <br /><br />
-        <Controls />
+        <Controls {params} />
     </div>
 </div>
 <footer class="footer">

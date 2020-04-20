@@ -1,19 +1,35 @@
 <script>
-  import page from 'page';
+    import router from 'page';
+    import qs from 'qs';
 
-  import Main from './pages/Main.svelte';
-  import Circle from './pages/Circle.svelte';
+    import Main from './pages/Main.svelte';
+    import Circle from './pages/Circle.svelte';
+    import Controls from "./components/Controls.svelte";
 
-  // set default component
-  let current = Circle;
+    let component = Main;
+    let params = {};
 
-  // Map routes to page. If a route is hit the current
-  // reference is set to the route's component
-  page('/main', () => (current = Main));
-  page('/circle', () => (current = Circle));
+    router('/main', () => (component = Main));
+    router('/main/:root', 
+        // Before we set the component
+        (ctx, next) => {
+            params = ctx.params;
+            console.log("params:");
+            console.log(params);
+            params = params;
+            next();
+        }, 
+        // Finally set the component
+        () => (component = Main)
+    );
+    router('/circle', () => (component = Circle));
 
-  // activate router
-  page.start();
+    // activate router
+    router.start();
 </script>
 
-<svelte:component this={current} />
+{#if component === Circle}
+    <svelte:component this={component} params={params} />
+{:else}
+    <Main />
+{/if}
