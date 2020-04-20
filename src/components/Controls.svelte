@@ -3,8 +3,11 @@
     import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
     import { saveSvg, normalizeModes } from '../lib/Utils';
+    import router from 'page';
     import queryString from "query-string";
-    
+
+    export let params;
+
     const modesArray = Object.keys(modes);
     const intrumentsArray = Object.keys(display_instruments);
 
@@ -16,7 +19,7 @@
     let displayMode;
 
     displayInstrument = $instrument;
-    displayRoot = $rootNote;
+    displayRoot = (params && params.root) ? params.root : $rootNote;
     displayStyle = $style;
     displayMode = $mode;
 
@@ -47,7 +50,6 @@
         displayMode = mode;
 
         const urlParams = `/?root=${root}&mode=${mode}&style=${style}&axe=${axe}`;
-        
         window.location.replace(urlParams.replace(/#/g, 's'));
     };
 
@@ -102,6 +104,7 @@
 {:else}
     <Fretboard {...props} bind:svg />
 {/if}
+
 <br />
 <button on:mousedown={ev => saveSvg(svg, downloadFileName)}>Save SVG</button>
 
