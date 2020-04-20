@@ -3,16 +3,14 @@
 
     export let params;
 
-    console.log("in Circle. params:");
-    console.log(params);
-    
-    
+    // console.log("in Circle. params:");
+    // console.log(params);
 </script>
 
 <div class="container">
     <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-logo" href="https://svelte.pybass.com">
+            <a class="navbar-logo" href="https://pybass.com">
                 <img src="/images/pybass_logo.svg" alt="PyBass logo">
             </a>
         </div>
