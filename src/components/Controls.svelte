@@ -1,5 +1,6 @@
 <script>
     import Fretboard from "./Fretboard.svelte";
+    import Piano from "./Piano.svelte";
     import { noteList, modes, display_styles, display_instruments, instrumentStrings} from "../lib/Utils.js";
     import { rootNote, mode, style, instrument } from '../state/stores.js';
     import { saveSvg, normalizeModes } from '../lib/Utils';
@@ -62,6 +63,9 @@
         fretboardTitle: fretboardTitle
     };
 
+    console.log('props');
+    console.log(props);
+    
 </script>
 
 <form id="controlsForm" on:submit|preventDefault={(e) => {}}>
@@ -99,6 +103,9 @@
     </div>
 </form>
 
+<Piano {...props} />
+
+<!-- 
 {#if props.displayInstrument == 'guitar'}
     <Fretboard {...props} bind:svg />
 {:else}
@@ -107,6 +114,7 @@
 
 <br />
 <button on:mousedown={ev => saveSvg(svg, downloadFileName)}>Save SVG</button>
+-->
 
 <style>
     button {

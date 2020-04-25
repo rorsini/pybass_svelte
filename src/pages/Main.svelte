@@ -1,7 +1,7 @@
 <script>
     import Controls from "../components/Controls.svelte";
 
-    export let params;
+    export let params = {};
 
     // console.log("in Main. params:");
     // console.log(params);
