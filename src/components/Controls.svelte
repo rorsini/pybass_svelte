@@ -54,18 +54,13 @@
         window.location.replace(urlParams.replace(/#/g, 's'));
     };
 
-    let props;
-    props = { 
+    let props = { 
         displayInstrument: displayInstrument,
         displayRoot: displayRoot,
         displayStyle: displayStyle,
         displayMode: displayMode,
         fretboardTitle: fretboardTitle
     };
-
-    console.log('props');
-    console.log(props);
-    
 </script>
 
 <form id="controlsForm" on:submit|preventDefault={(e) => {}}>
@@ -103,18 +98,20 @@
     </div>
 </form>
 
-<Piano {...props} />
+<div>
+    {#if props.displayInstrument == 'guitar'}
+        <Fretboard {...props} bind:svg />
+    {:else}
+        <Fretboard {...props} bind:svg />
+    {/if}
 
-<!-- 
-{#if props.displayInstrument == 'guitar'}
-    <Fretboard {...props} bind:svg />
-{:else}
-    <Fretboard {...props} bind:svg />
-{/if}
+    <br />
+    <button on:mousedown={ev => saveSvg(svg, downloadFileName)}>Save SVG</button>
+</div>
 
-<br />
-<button on:mousedown={ev => saveSvg(svg, downloadFileName)}>Save SVG</button>
--->
+<div>
+    <Piano {...props} />
+</div>
 
 <style>
     button {

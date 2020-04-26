@@ -16,35 +16,45 @@ export const getMinorarpeggio = (note) => {
   return gotScales.arpeggio(note + 'm').getNotes().map((n) => n.substring(0, 2));
 };
 
-export const getColor = (note, scale) => {
-  let notes = note;
+export const getScaleFromMode = (root, mode) => {
+  return gotScales.note(root).scale(mode.split(","), true).notes.map(s => {
+    if ( s.length > 1 ) {
+      return s.substring(5,7);
+    } else {
+      return s;
+    }
+  });
+};
 
-  if (typeof note == 'string') {
-    notes = [note];
+export const getPianoKeyColor = (inNote, root, mode) => {
+  const scale = getScaleFromMode(root, mode);
+  let note;
+  if ( typeof inNote === 'string' ) {
+    note = inNote;
+  } else {
+    note = inNote[1];
   }
-  for (let note_index in notes) {
-    note = notes[note_index];
-    for (let scale_index in scale) {
-      if (scale[scale_index] === note) {
-        if (scale_index === 0) {
-          //return '#8833ff';
-          return '#CC0000';
-        }
-        if (note.length > 1) {
-          return '#1199ff';
-        } else {
-          return '#77aaff';
-        }
-      }
+  let color = '#fff';
+
+  if (scale.includes(note)) {
+    if (note.length > 1) {
+      color = '#1199ff';
+    } else {
+      color = '#77aaff';
+    }
+  } else {
+    if (note.length > 1) {
+      color = '#000';
+    } else {
+      color = '#fff';
     }
   }
 
-  // TODO: what is this?
-  if (note.length > 1) {
-    return '#000';
-  } else {
-    return '#fff';
+  if ( note === root ) {
+    color = '#CC0000';
   }
+  
+  return color;
 };
 
 const hPosOffset = (pos) => {
