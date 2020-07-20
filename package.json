@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "got-scales": "^1.0.12",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "page": "^1.11.5",
     "qs": "^6.9.3",
     "sirv-cli": "^0.4.4"
