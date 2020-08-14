@@ -8,12 +8,17 @@
     export let fretboardTitle;
 
     let mode = displayMode;
-    if ( displayStyle == 'arpeggio' ) {
+    if ( displayStyle === 'arpeggio' || displayStyle === 'triads' ) {
         mode = displayMode.split(",").filter((degree, index) => {
             if (index % 2 == 0) {
                 return degree;
             }
         }).join(',');
+    }
+    if (displayStyle === 'triads') {
+        let temp = mode.split(',');
+        temp.pop();
+        mode = temp.join(',');
     }
     const root = displayRoot;
 

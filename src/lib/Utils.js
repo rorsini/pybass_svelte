@@ -238,7 +238,8 @@ export const noteList = [
 export const display_styles = [
   'notes',
   'arpeggio',
-  'degrees'
+  'degrees',
+  'triads'
 ];
 
 export const display_instruments = {

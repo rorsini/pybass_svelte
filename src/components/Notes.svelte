@@ -37,8 +37,16 @@
             let note_label = note;
             let text_color = 'black';
             let stroke_color = Utils.note_name_stroke_color;
-            if (displayStyle && (displayStyle === "degrees" || displayStyle === "arpeggio")) {
+            if (displayStyle && (displayStyle === "degrees" || displayStyle === "arpeggio" || displayStyle === "triads")) {
                 if (displayStyle === "arpeggio") {
+                    if (scale_degree % 2 === 0) {
+                        continue;
+                    }
+                }
+                if (displayStyle === "triads") {
+                    if (scale_degree === 7) {
+                        continue;
+                    }
                     if (scale_degree % 2 === 0) {
                         continue;
                     }
